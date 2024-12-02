@@ -1,0 +1,415 @@
+@import './normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Bellefair&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
+
+:root{
+    --color-accent:rgb(156, 158, 165);
+    --color-hover:rgba(151, 151, 151, 0.224);
+}
+
+/* .bellefair-regular {
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+  font-style: normal;
+} */
+
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+/* Typography */
+::selection {
+  /* background: var(--color-primary); */
+  color: #fff;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+img {
+  width: 100%;
+}
+
+h1{
+  font-size: 8rem;
+}
+
+h2{
+  font-size: 6rem;
+}
+
+h3{
+  font-size: 4rem;
+}
+
+h4{
+  font-size: 2.5rem;
+}
+
+h5{
+  font-size: 1.8rem;
+}
+
+h6{
+  font-size: 1.6rem ;
+}
+
+h1,h2,h3,h4,h5,h6{
+
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #fff;
+  background-image: url(../assets/home/background-home-mobile.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Barlow", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+@media screen and (min-width:768px) {
+  h1{
+  font-size: 10rem;
+  }
+
+  h2{
+  font-size: 8rem;
+  }
+
+  h3{
+  font-size: 6rem;
+  }
+
+  h4{
+  font-size: 4.5rem;
+  }
+
+  h5{
+  font-size: 3.8rem;
+  }
+
+  body {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: #fff;
+  background-image: url(../assets/home/background-home-tablet.jpg);
+}
+}
+@media screen and (min-width:1440px) {
+  h1{
+  font-size: 12rem;
+  }
+
+  h2{
+  font-size: 10rem;
+  }
+
+  h3{
+  font-size: 8rem;
+  }
+
+  h4{
+  font-size: 6.5rem;
+  }
+
+  h5{
+  font-size: 5.8rem;
+  }
+
+  body {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-size: 2.5rem;
+  line-height: 1.8;
+  color: #fff;
+  background-image: url(../assets/home/background-home-desktop.jpg);
+}
+}
+
+
+/* Navbar */
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem;
+    flex-wrap: wrap;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 2px;
+}
+.nav__brand img{
+    width: 4rem;
+}
+.separator{
+  display: none;
+}
+.list{
+
+  list-style: none;
+}
+ .nav__list {
+    counter-reset: list-counter -1; /* Start from -1 so 00 is first */
+  }
+  
+  .collapsible__content{
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  /* right: -100%; Start off-screen */
+  height: 100%;
+  width: 60%;
+  background: transparent;
+  backdrop-filter: blur(30px); /* Blur background */
+  color: #fff;
+  padding: 2rem;
+  padding-right: 0rem;
+  transition: right 0.5s ease-in-out;
+  display: none;
+  flex-direction: column;
+  z-index: 1000;
+
+}
+.nav__list.active{
+  right: 0;
+  display: flex;
+}
+.nav__item {
+      counter-increment: list-counter;
+      margin: 1rem;
+      margin-right: 0;
+      cursor: pointer;
+      /* width: 100%; */
+      display: block;
+      /* position: relative; */
+      transition: all 0.3s;
+    }
+    
+
+.nav__item:hover{
+  border-right: 4px solid rgba(255, 255, 255, 0.5);
+}
+
+.nav__item.active{
+  border-right: 4px solid #fff;
+  
+}
+
+.nav__item::before {
+      content: counter(list-counter, decimal-leading-zero) " ";
+}
+
+.close-icon{
+  width: 2rem;
+  float: right;
+  margin: 1rem 2rem 4rem 0;
+  cursor: pointer;
+}
+
+
+/* Link */
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+
+@media screen and (min-width:768px) {
+    .menu-icon, .close-icon{
+        display: none;
+    }
+    
+    .nav__list{
+      width: auto;
+      height: fit-content;
+      background-color: rgba(255, 255, 255, 0.05);
+      display: flex;
+      flex-direction: row;
+      backdrop-filter:none;
+      justify-content: space-between;
+      overflow: hidden;
+      right: 0;
+      z-index: 1;
+      /* gap: 3rem; */
+    }
+    .nav__item.active, .nav__item::before, .nav__item:hover{
+      border: none;
+    }
+    .nav__brand img{
+      width: 5rem;
+      margin: 1rem 0 0 2.5rem;
+    }
+    .nav__item{
+      padding: 1rem 2rem;
+      /* position: relative; */
+    }
+    
+    /* .nav__item.active:before {
+    border-bottom: 0.5rem solid #fff ; 
+    padding-bottom: 3.8rem;
+    width: 100%;
+  } */
+  .nav__item.active{
+      text-decoration: underline;
+      text-decoration-color: #fff;
+      text-decoration-thickness:.5rem; 
+      
+    }
+    
+    .nav__item:hover{
+      text-decoration: underline;
+      text-decoration-color: rgba(255, 255, 255, 0.5);
+      text-decoration-thickness:.5rem ;
+      transition: all 0.3s ease-in-out;
+    }
+}
+
+
+@media screen and (min-width:1440px) { 
+  .collapsible__content{
+    display: flex;
+    justify-content: space-between;
+    /* position: static; */
+    position: sticky;
+  }
+  .nav{
+    margin: 0;
+  }
+  .separator {
+  display:flex;
+  flex-grow: 1; /* Makes the line stretch between logo and nav */
+  height: 1px;
+  background-color: #fff; /* Line color */
+  margin: 0 1rem; /* Adds spacing around the line */
+  border: none; /* Removes any default styling */
+}
+}
+
+/* Home Page Content block */
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.intro__content {
+  margin-bottom: 3rem;
+  padding: 0 2rem;
+}
+
+.tagline {
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  color: #ccc;
+}
+
+.heading {
+  /* margin: 1rem 0 0 2rem; */
+  margin-top: -3rem;
+  margin-bottom: -1rem;
+  padding: 0 2rem;
+}
+
+.intro__body {
+  line-height: 1.6;
+  padding: 0 1rem;
+  
+  color: rgba(255, 255, 255, 0.8);
+}
+
+
+
+/* Desktop Layout */
+
+@media screen and (min-width: 1440px) {
+  .main {
+    display: grid;
+    align-items: center; /* Center the content vertically */
+    justify-content: center; /* Center the content horizontally */
+    /* height: 100vh; */
+  }
+
+  .grid--1x2 {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Two equal columns */
+    gap: 10rem; /* Space between grid items */
+    align-items: center; /* Vertically center grid items */
+    justify-content: center;
+    padding: 4rem 11rem 3rem 10rem;
+    height:0%;
+  }
+  .intro__content {
+    /* max-width: 100%; */
+    text-align: left; /* Align text to the left */
+    padding: 0;
+  }
+  .explore-btn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  justify-self: flex-end;
+}
+.heading, .intro__body{
+  padding: 0;
+}
+}
+
+
+
+/* Button */
+.explore-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn{
+    width: 14rem; 
+      height: 14rem; 
+      background-color: #fff; /* Button background color */
+      color: #000; 
+      border: none; 
+      border-radius: 50%; 
+      display: flex; 
+      align-items: center;
+      justify-self: center;
+      justify-content: center;
+      font-size: 2rem; 
+      cursor: pointer; /* Pointer cursor on hover */
+      margin-top: 3rem;
+    }
+.btn:hover{
+    box-shadow: 0 0 3px 5rem var(--color-hover); 
+    /* transition: background-color 0.3s, transform 0.2s; */
+    color: var(--color-accent)
+}
+
+
+
+@media screen and (min-width: 768px) {
+  .btn {
+    width: 30rem; /* Increased size for desktop */
+    height: 30rem;
+    font-size: 3rem; /* Slightly larger font for desktop */
+  }
+}
