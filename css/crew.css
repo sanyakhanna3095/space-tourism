@@ -85,7 +85,9 @@ body{
   display: flex;
   margin: 2rem 4rem;
 }
-
+.image-container{
+  margin-top: 2rem;
+}
 .crew__image {
   width: 100%;
   padding: 2rem;
@@ -110,12 +112,15 @@ body{
         object-fit: cover;
         object-position: top; 
     }
-    .crew__member{
+    .image-container{
+      display: flex;
+      justify-content: center;
+      margin-top: 3rem;
         margin-bottom: 0;
         justify-content: center;
         position: relative;
         overflow: hidden;
-        height: 560px;
+        height: 620px;
     }
 }
 
@@ -123,10 +128,34 @@ body{
     /* .crew-name{
         font-size: 2rem;
     } */
+     .main{
+       margin: 0rem 8rem;
+     }
+     .crew--container{
+      padding: 2rem;
+      display: grid;
+      align-items: flex-end;
+      justify-items: left;
+      height: 100%;
+      /* margin: 0 2rem; */
+      grid-auto-flow: column;
+    grid-template-areas: 
+      "A C"
+      "B C";
+     }
+     .text-content{
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+      grid-area: A;
+     }
     .crew-description{
         margin-left: 0;
         padding-left: 0;
         text-align: left;
+    }
+    .dots{
+      grid-area: B;
     }
     .dot{
         width: 15px;
@@ -136,8 +165,17 @@ body{
         display: flex;
         width: 100%;
     } */
+     .image-container{
+      height: 100%;
+      position: relative;
+        overflow:visible;
+     }
     .crew__image{
         width: 100%;
+        height: 100%;
+      }
+      .col1{
+      grid-area: C;
     }
     .grid--1x2{
     display: grid;
@@ -153,19 +191,21 @@ body{
     width: 100%;
     margin: 0 auto; 
     }
+
+
     .crew{
         gap: 2rem;
     }
-    .col1{
+    /* .col1{
     grid-row: span 2;
     display: flex;
-  justify-content: flex-end; /* Center-align the image horizontally */
+  justify-content: flex-end; 
   align-items: start;
     }
     .col2{
        display: flex;
-  flex-direction: column; /* Stack content vertically */
-  justify-content: flex-start; /* Align content to the top */
+  flex-direction: column; 
+  justify-content: flex-start; 
   align-items: flex-start;
-    }
+    } */
 }

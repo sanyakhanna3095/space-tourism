@@ -41,7 +41,13 @@ h1{
 }
 
 h2{
-  font-size: 6rem;
+font-family: Bellefair;
+font-size: 114.6%;
+line-height: 64.18px;
+text-align: center;
+/* text-underline-position: from-font;
+text-decoration-skip-ink: none; */
+
 }
 
 h3{
@@ -61,17 +67,19 @@ h6{
 }
 
 h1,h2,h3,h4,h5,h6{
-
+  color: #fff;
   font-family: "Bellefair", serif;
   font-weight: 400;
   font-style: normal;
 }
 
+p{
+  color: rgba(208, 214, 249, 1);
+}
+
 body {
-  font-family: Inter, Arial, Helvetica, sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   line-height: 1.8;
-  color: #fff;
   background-image: url(../assets/home/background-home-mobile.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -83,7 +91,7 @@ body {
 
 @media screen and (min-width:768px) {
   h1{
-  font-size: 10rem;
+  font-size: 13rem;
   }
 
   h2{
@@ -106,13 +114,12 @@ body {
   font-family: Inter, Arial, Helvetica, sans-serif;
   font-size: 1.6rem;
   line-height: 1.8;
-  color: #fff;
   background-image: url(../assets/home/background-home-tablet.jpg);
 }
 }
 @media screen and (min-width:1440px) {
   h1{
-  font-size: 12rem;
+  font-size: 18rem;
   }
 
   h2{
@@ -135,7 +142,6 @@ body {
   font-family: Inter, Arial, Helvetica, sans-serif;
   font-size: 2.5rem;
   line-height: 1.8;
-  color: #fff;
   background-image: url(../assets/home/background-home-desktop.jpg);
 }
 }
@@ -238,17 +244,19 @@ a{
     }
     
     .nav__list{
-      width: auto;
+      width: 82%;
       height: fit-content;
-      background-color: rgba(255, 255, 255, 0.05);
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(80px);
       display: flex;
       flex-direction: row;
       backdrop-filter:none;
-      justify-content: space-between;
+      justify-content:flex-end;
       overflow: hidden;
       right: 0;
       z-index: 1;
-      /* gap: 3rem; */
+      padding-right: 3rem;
+      /* gap: .5rem; */
     }
     .nav__item.active, .nav__item::before, .nav__item:hover{
       border: none;
@@ -298,8 +306,10 @@ a{
   flex-grow: 1; /* Makes the line stretch between logo and nav */
   height: 1px;
   background-color: #fff; /* Line color */
-  margin: 0 1rem; /* Adds spacing around the line */
+  margin: 0 0 0 2rem; /* Adds spacing around the line */
   border: none; /* Removes any default styling */
+  padding-left: 2rem;
+  position: relative;
 }
 }
 
@@ -309,19 +319,18 @@ a{
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 2rem;
+  margin: 2rem;
 }
 
 .intro__content {
-  margin-bottom: 3rem;
-  padding: 0 2rem;
+  margin-bottom: 6rem;
+  /* padding: 0 2rem; */
 }
 
 .tagline {
-  margin-bottom: 1rem;
+  margin-bottom: 2.5rem;
   text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  color: #ccc;
+  letter-spacing: 0.1rem;
 }
 
 .heading {
@@ -333,9 +342,22 @@ a{
 
 .intro__body {
   line-height: 1.6;
-  padding: 0 1rem;
-  
-  color: rgba(255, 255, 255, 0.8);
+  padding: 0 .5rem;
+  line-height: 28.8px;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+}
+
+@media screen and (min-width:768px) {
+  .intro{
+    margin: 0 3rem;
+    padding:7.5rem 2.5rem;
+    gap: .5rem;
+  }
+  .intro__content{
+    margin-bottom: 3rem;
+  }
 }
 
 
@@ -362,7 +384,9 @@ a{
   .intro__content {
     /* max-width: 100%; */
     text-align: left; /* Align text to the left */
-    padding: 0;
+    padding-left: 2rem;
+    margin-top: 2.5rem;
+    /* gap: 1.4rem; */
   }
   .explore-btn {
   display: flex;
@@ -370,8 +394,22 @@ a{
   align-items: center;
   justify-self: flex-end;
 }
-.heading, .intro__body{
+.heading, .intro__body, .tagline{
   padding: 0;
+  /* margin: 0; */
+}
+.tagline{
+  margin: 0;
+}
+.intro__body{
+  text-align: left;
+  /* margin: 0; */
+  margin-top: -2rem;
+  line-height: 1.5;
+}
+.heading{
+  margin-top: -3rem;
+  /* margin-bottom: -1rem; */
 }
 }
 
