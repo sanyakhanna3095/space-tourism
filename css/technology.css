@@ -1,6 +1,6 @@
 @import url(normalize.css);
 @import url(style.css);
-@import url(crew.css);
+@import url(./crew.css);
 
 body{
     background-image: url(../assets/technology/background-technology-mobile.jpg);

@@ -1,5 +1,5 @@
 @import url(normalize.css);
-@import url(destination.css);
+@import url(./destination.css);
 
 
 body{
