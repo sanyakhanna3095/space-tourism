@@ -12,6 +12,7 @@
     "node-modules": "^1.0.1"
   },
   "devDependencies": {
+    "parcel": "^2.13.3",
     "parcel-bundler": "^1.12.5"
   }
 }
