@@ -1,18 +1,15 @@
 {
   "name": "spacetourism",
   "version": "1.0.0",
-  "description": "Space tour site",
+  "description": "![Design preview for the Fylo dark theme landing page challenge](./design/desktop-preview.jpg)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "node-modules": "^1.0.1"
-  },
   "devDependencies": {
-    "parcel": "^2.13.3",
     "parcel-bundler": "^1.12.3"
   }
 }
