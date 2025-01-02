@@ -1,17 +1,17 @@
 {
   "name": "spacetourism",
   "version": "1.0.0",
-  "description": "!",
+  "description": "Space tour site",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html --no-minify"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "node-modules": "^1.0.1"
+  },
   "devDependencies": {
-    "node-sass": "^9.0.0",
-    "parcel-bundler": "^1.12.5"
+    "parcel-bundler": "^1.12.3"
   }
 }
